@@ -1,8 +1,8 @@
 {
-  "navigationBarTitleText": "体检记录",
+  "navigationBarTitleText": "体检",
 
   "usingComponents": {
     "van-empty": "@vant/weapp/empty/index",
-    "my-underway": "../components/underway/underway"
+    "my-testitem": "../../components/testitem/testitem"
   }
 }

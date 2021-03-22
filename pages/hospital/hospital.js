@@ -1,5 +1,6 @@
 // pages/hospital/hospital.js
 
+/*
 export default {
   data() {
     return {
@@ -7,20 +8,7 @@ export default {
     };
   },
 };
-
-
-
-
-
-/*export default {
-  data() {
-    return {
-      active: 0,
-      items: [{ text: '分组 1' }, { text: '分组 2' }],
-    };
-  },
-};*/
-
+*/
 
 
 Page({
@@ -29,7 +17,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    activeKey: 0,
   },
 
   /**

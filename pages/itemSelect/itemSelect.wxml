@@ -1,0 +1,33 @@
+<!--pages/itemSelect/itemSelect.wxml-->
+<van-search value="{{ value }}" shape="round" placeholder="请输入搜索关键词" />
+
+<van-row gutter="20">
+  <van-col span="6">
+    <van-sidebar active-key="{{ activeKey }}">
+      <van-sidebar-item title="全部项目" />
+      <van-sidebar-item title="入职体检" />
+      <van-sidebar-item title="婚检项目" />
+      <van-sidebar-item title="内科项目" />
+      <van-sidebar-item title="外科项目" />
+    </van-sidebar>
+  </van-col>
+
+  <van-col span="18">
+    <van-checkbox-group value="{{ result }}" bind:change="onChange">
+      <van-cell-group>
+        <van-cell wx:for="{{ list }}" wx:key="index" value-class="value-class" data-index="{{ index }} " clickable
+          title="{{ item.itemName }}" use-label-slot bind:click="toggle">
+          <view slot="label">
+            <view>体检地点：{{item.room}}</view>
+            <view>当前排队：{{item.queueNum}}</view>
+          </view>
+          <van-checkbox catch:tap="noop" class="checkboxes-{{ index }}" name="{{ item.itemName }}" />
+        </van-cell>
+      </van-cell-group>
+    </van-checkbox-group>
+  </van-col>
+</van-row> 
+
+<van-goods-action>
+  <van-goods-action-button color="#7232dd" text="已选择{{result.length}}个项目、开始体检" bind:click="onClickButton" />
+</van-goods-action>

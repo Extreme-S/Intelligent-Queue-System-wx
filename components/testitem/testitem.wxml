@@ -1,7 +1,7 @@
 <view class="inner">
 
-  <!-- 组件左边：图标 -->
-  <van-icon name="like-o" />
+  <!-- 组件左边：图标
+  <van-icon name="like-o" /> -->
 
   <!-- 组件中间：体检项目 -->
   <text class="classification">{{description}}</text>
@@ -16,4 +16,5 @@
   <text class="statuss" bind:tap="getMoreInfo">{{status}}</text>
 
   <slot></slot>
+  
 </view>

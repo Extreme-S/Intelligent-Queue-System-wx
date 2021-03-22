@@ -65,3 +65,11 @@
   height:5rpx;
 }
 
+.cell-value{
+  color: red !important;
+  font-size: 15px !important;
+}
+
+.tj-panel{
+  margin-top: 200px !important;
+}

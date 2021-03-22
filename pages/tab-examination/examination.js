@@ -37,6 +37,12 @@ Page({
       activeName: event.detail,
     });
   },  
+
+  clickStart(event){
+    wx.navigateTo({
+      url: '../itemSelect/itemSelect',
+    })
+  },
   //以下暂时没有使用-----------------------------------------------------------------------------------------------
   /**
    * 生命周期函数--监听页面加载

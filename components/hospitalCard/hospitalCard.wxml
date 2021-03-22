@@ -13,7 +13,6 @@
         <!-- 医院名称 -->
         <text class="hospitalName">{{name}}</text>
 
-
         <!-- 医院评分与预约人数 -->
         <view class="rate-amount">
             <van-rate value="{{ rate }}"  size="20rpx"  gutter="4rpx" allow-half  color="#ee0a24"  void-color="#eee"  void-icon="star"/>
@@ -21,10 +20,8 @@
             <text class="amount">已约{{amount}}人</text>
         </view>
 
-
         <!-- 医院地址 -->
-        <text class="hospitalAddress">{{address}}</text>
-        
+        <text class="hospitalAddress">{{address}}</text>        
 
         <!-- 医院标签 -->
         <view class="tags">
