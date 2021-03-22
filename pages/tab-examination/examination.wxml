@@ -2,50 +2,69 @@
 
 <!-- ==========注意：此处使用了条件渲染，如果要更改显示界面，应在app.js文件的底部，调整gData中的mode值。================== -->
 
-<!-- ↓未预约↓ -->
-<van-empty wx:if="{{showMode === 1}}" description="您还没有待进行的项目" >
-  <button id="reserve">快速预约</button>
+<!-- ↓体检未开始↓ -->
+<van-empty wx:if="{{showMode === 1}}" description="您还没有待进行的项目">
+  <button id="reserve" bindtap="clickStart">开始体检</button>
   <button id="check">体检记录</button>
 </van-empty>
+   
 
 
+<!-- ↓开始体检项目选择↓ -->
 
-<!-- ↓已预约，未开始↓ -->
+<van-panel wx:if="{{showMode === 2}}" title="体检" status="{{test_status}}" custom-class="panel"
+  header-class="panel-header" use-footer-slot="true">
 
-<van-panel wx:elif="{{showMode === 2}}" title="体检"  status="{{test_status}}"  custom-class="panel" header-class="panel-header" use-footer-slot="true">
-
-  <van-card num="1"  price="{{test_price}}"  title="{{test_name}}"  thumb="{{test_image}}" custom-class="card">
+  <van-card num="1" price="{{test_price}}" title="{{test_name}}" thumb="{{test_image}}" custom-class="card">
     <view slot="footer">
       <view class="infocontainer">
-        <text class="info" space="ensp" >体 检 人  {{test_person}}\n</text>
-        <text class="info" space="ensp" >预约时间  {{test_starttime}}\n</text>
-        <text class="info" space="ensp" >预约地点  {{test_hospital}}\n</text>
+        <text class="info" space="ensp">体 检 人 {{test_person}}\n</text>
+        <text class="info" space="ensp">预约时间 {{test_starttime}}\n</text>
+        <text class="info" space="ensp">预约地点 {{test_hospital}}\n</text>
       </view>
     </view>
   </van-card>
 
-  <text class="price_total" >合计：￥{{test_price}}\n</text>  
+  <text class="price_total">合计：￥{{test_price}}\n</text>
 
-  <view slot="footer" >
+  <view slot="footer">
     <van-button custom-class="button" size="small">我已到达，开始排队</van-button>
   </view>
 
 </van-panel>
 
 
-<!-- ↓已开始↓ -->
-<view class="divLine"></view>
-<my-underway description="卡介苗" doctor="王医生"  time="2020.8.9"  status="排队中"/>
-<view class="divLine"></view>
-<my-underway description="眼科" doctor="刘医生"  time="2020.8.9"  status="等待中"/>
-<view class="divLine"></view>
-<my-underway description="鼻科" doctor="张医生"  time="2020.8.9"  status="等待中"/>
-<view class="divLine"></view>
-<my-underway description="喉科" doctor="李医生"  time="2020.6.35"  status="已完成"/>
-<view class="divLine"></view>
-<my-underway description="骨科" doctor="赵医生"  time="2020.7.9"  status="已完成"/>
-<view class="divLine"></view>
-<my-underway description="心脏科" doctor="钱医生"  time="2020.7.26"  status="已完成"/>
-<view class="divLine"></view>
+<!-- ↓已开始体检队列↓ -->
+<van-panel wx:if="{{showMode === 3}}" class="tj-panel">
+  <van-divider contentPosition="left">我的体检项目列表</van-divider>
+  <van-cell use-label-slot title="体检项目：眼部检查"  value="体检中(A13号)" value-class="cell-value" >
+    <view slot="label">
+      <view >地点：体检中心106</view>
+      <view >目前检查：A13号</view>
+      <view >预计等待：0分钟</view>
+    </view>
+  </van-cell>
+  <van-cell use-label-slot title="体检项目：心脏科"  value="排队(A16号)" value-class="cell-value" >
+    <view slot="label">
+      <view >地点：体检中心108</view>
+      <view >目前检查：A8号</view>
+      <view >预计等待：9分钟</view>
+    </view>
+  </van-cell>
+  <van-cell use-label-slot title="体检项目：五官科"  value="等待排队" value-class="cell-value" >
+    <view slot="label">
+      <view >地点：体检中心210</view>
+      <view >目前检查：B26号</view>
+      <view >预计等待：未排队</view>
+    </view>
+  </van-cell>
+  <van-cell use-label-slot title="体检项目：卡介苗"  value="等待排队" value-class="cell-value" >
+    <view slot="label">
+      <view >地点：体检中心202</view>
+      <view >目前检查：B16号</view>
+      <view >预计等待：未排队</view>
+    </view>
+  </van-cell>
 
+</van-panel>
 <!-- 出错了 -->

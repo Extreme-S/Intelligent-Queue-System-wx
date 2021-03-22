@@ -1,13 +1,13 @@
 .inner{
   display: flex;
-  align-items: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  /* align-items: ; */
+  margin: 10px;
 }
 
 .classification{
+  background-color: blue;
   font-size: large;
-  margin-right: 10px;
+  width: 100px;
 }
 
 .doctorr{
@@ -25,7 +25,9 @@
 }
 
 .statuss{
-  font-size: medium;
+  background-color: aquamarine;
+  margin-right: 0px;
+  width: 100px;
   color: blue;
-  margin-right: 20px;
 }
+

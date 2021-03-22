@@ -1,0 +1,4 @@
+/* pages/itemSelect/itemSelect.wxss */
+.value-class {
+  flex: none !important;
+}
